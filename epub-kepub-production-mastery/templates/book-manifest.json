@@ -1,0 +1,30 @@
+{
+  "title": "Book title",
+  "author": "Bhupender Bhardwaj",
+  "language": "en",
+  "audience": "Describe the intended reader",
+  "reader_outcome": "Describe what readers can do after reading",
+  "production_plan": {
+    "editable_unit": "single",
+    "estimated_word_count": null,
+    "chapter_count": 2,
+    "decision_reason": "Record the word-count, chapter-count, source-complexity, and editing factors behind the single or modular choice."
+  },
+  "delivery_targets": ["epub3", "kindle-conversion", "kobo-epub"],
+  "source_coverage_file": "source-coverage.csv",
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part title",
+      "chapters": [
+        {"id": "chapter-01", "title": "Chapter title", "source": "chapters/chapter-01.md"},
+        {"id": "chapter-02", "title": "Chapter title", "source": "chapters/chapter-02.md"}
+      ]
+    }
+  ],
+  "design": {
+    "reflowable": true,
+    "cover": "assets/cover.jpg",
+    "shared_stylesheet": "styles/book.css"
+  }
+}

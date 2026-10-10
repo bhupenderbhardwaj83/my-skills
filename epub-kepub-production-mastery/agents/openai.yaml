@@ -1,0 +1,6 @@
+interface:
+  display_name: "EPUB & KePUB Production"
+  short_description: "Create, revise, and verify reader-ready ebooks"
+  default_prompt: "Use $epub-kepub-production-mastery to plan or produce this ebook."
+policy:
+  allow_implicit_invocation: true

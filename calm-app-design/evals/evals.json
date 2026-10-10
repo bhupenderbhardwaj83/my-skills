@@ -1,0 +1,59 @@
+{
+  "skill_name": "calm-app-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build me the main overview page for my SaaS admin app in Next.js (App Router) + TypeScript + Tailwind. Show revenue, active users, churn and open tickets as KPIs, a monthly revenue trend chart, signups per month this year vs last year, and a recent orders table (about 60 orders: id, customer, plan, status, date, amount). Use realistic mock data for now.",
+      "expected_output": "Complete Next.js page + components: theme toggle, sidebar with logo, stat cards (overline/metric/context), smooth line chart, rounded comparison bar chart, orders table with search/sort/pagination/CSV, tokens in both themes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "make a simple inventory tracker as a single index.html (plain html css js, no frameworks, no build step) - products table with sku, name, category, qty, price. needs to look nice, work in dark mode too. about 40 sample products",
+      "expected_output": "One self-contained HTML file: theme toggle (light/dark/system), searchable table with / shortcut, Esc, arrows, Enter; sortable columns, pagination, CSV download; readable calm styling.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm building a desktop app in Tauri with React + TypeScript. I need the main window shell: a left sidebar with my logo (just use a placeholder mark) and sections Projects, Recordings, Exports, Settings, and the Projects screen showing a searchable list of ~300 projects (name, client, last edited). Clicking/opening a project should call openProject(id).",
+      "expected_output": "Shell with collapsible sidebar (logo always visible, \u2318B), theme toggle, project search list with full keyboard model (/, arrows, Enter, Esc), empty state, tokens.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Build a cloud security findings console in Next.js (App Router) + TypeScript + Tailwind. Areas: Boards, Issues (sub-pages: Risk issues, Graph control issues, All posture issues, Vulnerabilities, Secrets), Threats, Inventory, Reports, Settings. The Threats page needs filters (status, severity, cloud account), a few dashboard widgets (threats by severity, triggered vs resolved over 30 days, security score), the threats list, and clicking a threat should show its details without leaving the page. Add an AI assistant users can ask questions; our backend streams answers from POST /api/assistant. Mock data is fine.",
+      "expected_output": "Icon rail with hover flyout sections + pin, top bar with \u2318K palette, FilterBar chips, widgets with ring/multi-line crosshair/gauge, DataTable with selection/expand/column picker, DetailDrawer with prev/next and tabs, AiAssistant streaming via fetch with signal, empty state.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "react + ts admin screen for our support desk (vite). tickets list (id, subject, customer, priority, status, assignee, updated) about 120 tickets, agents need to bulk close / reassign, see the conversation of a ticket inline without opening it, filter by priority & status & assignee, and jump around quickly. we want an 'Ask AI' helper button but there's no AI backend yet - it should still look right.",
+      "expected_output": "DataTable selectable+bulk actions, expandable rows, FilterBar, CommandPalette \u2318K, AiAssistant with available=false and setup note, priority badges with words, tokens both themes.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "single index.html (no build, no frameworks) dashboard for my home server: cpu and memory usage over the last 24h with hover values, disk usage as a gauge, network in vs out chart, and a services table (name, status, uptime, cpu%). dark and light. use sample data",
+      "expected_output": "Self-contained page with theme toggle, smooth hover charts (crosshair tooltip, faint gridlines), gauge, multi-series chart with legend, searchable/sortable services table with status words, calm tokens.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I want a small Mac app (later maybe windows too) to keep track of my photo shoots - list of shoots with client, date, location, tags, quick search, and when I click one I see details and can attach the folder of RAW files from my disk. should feel like a proper native app, not a website. just write the source files, dont run installs.",
+      "expected_output": "Desktop stack (Tauri 2 + React + TS), secure config, title bar, native dialog for folders, calm components",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "build the frontend for my yoga studio site: members see the weekly class schedule and book a spot, and there's an admin page with a bookings table (search, filters, export). the backend is FastAPI that I already have running on port 8000 with /api/classes and /api/bookings. write the source files only, no installs.",
+      "expected_output": "Web stack (Next.js), /api rewrite to FastAPI, typed client, responsive, server-side or client table, URL state",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "need a desktop tool for our lab: it reads sensors over USB serial ports (so node serialport is required) and shows live charts per sensor, plus an alerts list. a python fastapi service on the same machine does anomaly detection and streams results. electron is fine. write the source files only, no installs.",
+      "expected_output": "Electron with secure main/preload, serial in main via validated IPC, live charts, FastAPI SSE via client",
+      "files": []
+    }
+  ]
+}

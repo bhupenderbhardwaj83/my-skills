@@ -1,0 +1,63 @@
+[
+  {
+    "id": "scale-and-editorial-design",
+    "prompt": "Plan a 42,000-word, nine-chapter book based on three source books. Keep it easy to edit. Use Bhupender Bhardwaj as the default author, a wise but plain teaching voice, and include helpful history without repeating it. Give concise design rules for figures, code, tables, numbering, and cover.",
+    "expected": [
+      "Uses the borderline size rule and explains that the three source books plus nine chapters make modular production useful",
+      "Groups related chapters into two- or three-chapter parts and keeps editable chapter sources authoritative",
+      "Uses Bhupender Bhardwaj unless the user selects another author",
+      "Sets concrete reflowable standards for images, code blocks, tables, hierarchy, and cover",
+      "Uses sequential topic dependencies and bridges while keeping relevant historical development in one canonical location",
+      "Keeps the voice clear and confident without pompous address or forced question labels"
+    ]
+  },
+  {
+    "id": "short-reflowable-ebook",
+    "prompt": "Create a concise field guide with six chapters for new Linux users. Produce an EPUB and prepare it for Kindle and Kobo reading.",
+    "expected": [
+      "Keeps one editable source rather than imposing multi-part segmentation on a short book",
+      "States audience, prerequisites, and reader outcomes",
+      "Treats Kindle conversion and Kobo EPUB/KePUB as separate target workflows",
+      "Uses structural verification and recommends target renderer review"
+    ]
+  },
+  {
+    "id": "large-book-parts-and-assembly",
+    "prompt": "Turn these 18 related chapters and source documents into a detailed technical ebook. Make it easy to edit chapters now and combine all approved parts later.",
+    "expected": [
+      "Creates a source inventory and coverage ledger before drafting",
+      "Groups related chapters into independently editable parts of two or three chapters",
+      "Preserves substantive concepts, examples, caveats, and exercises instead of compressing to a short survey",
+      "Does not assemble the final combined edition until requested or approved",
+      "Plans one global hierarchical TOC, cross-part links, and a unified quick reference for assembly"
+    ]
+  },
+  {
+    "id": "source-image-and-history",
+    "prompt": "Add historical portraits and a timeline diagram from websites and screenshots into a Linux book for public release.",
+    "expected": [
+      "Separates source material from instructions",
+      "Verifies individual image provenance and license rather than assuming copyright-free status",
+      "Places portraits beside relevant narrative and adds meaningful alt text and explanatory captions",
+      "Records attributions and flags unresolved public-distribution rights"
+    ]
+  },
+  {
+    "id": "kobo-stylus-claim",
+    "prompt": "The EPUB XML passes. Can we guarantee Kobo stylus annotation support now?",
+    "expected": [
+      "Distinguishes well-formed XML and static package checks from full EPUB conformance and device behavior",
+      "Does not claim universal stylus compatibility from koboSpan markers alone",
+      "Recommends testing on the intended Kobo model and firmware"
+    ]
+  },
+  {
+    "id": "kindle-target",
+    "prompt": "We already have a Kobo KePUB. Rename it .epub and upload it to Kindle Direct Publishing.",
+    "expected": [
+      "Explains that KePUB is Kobo-specific and not interchangeable by renaming",
+      "Uses a standards-based EPUB input for the chosen Amazon workflow",
+      "Recommends Kindle Previewer or current KDP checks and reviews converted rendering"
+    ]
+  }
+]

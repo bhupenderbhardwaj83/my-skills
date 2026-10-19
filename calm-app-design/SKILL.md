@@ -111,6 +111,15 @@ Details and examples: [references/components.md](references/components.md).
    do next; errors say how to fix it.
 8. **Uniform.** The same kind of thing works the same way everywhere — that is why the components
    exist.
+9. **Fast and light.** Speed first, then accuracy, experience, security, memory and CPU/GPU, disk
+   last. Nothing blocks the screen: long work runs in the background with progress and Stop;
+   edits redo only what changed (content-keyed caches, proven equal to a full rebuild); the GPU
+   does compositing, canvas, decoding and video; big buffers are released; oversize input is
+   refused before it loads; runtimes stay lean. Measure before and after. See
+   [references/performance.md](references/performance.md).
+10. **Secure by default.** Least privilege (minimal permissions, strict CSP, local-only services
+   with a token), every path / size / type checked where it enters, nothing secret in code,
+   logs or URLs. See [references/security.md](references/security.md).
 
 ## Layout and spacing
 
@@ -129,7 +138,8 @@ gridlines) and grid layouts.
 
 ## Finish
 
-Run the [review checklist](references/checklist.md) and `scripts/security_check.py`, and fix what fails. When writing code for the
+Run the [review checklist](references/checklist.md) (including its speed and resources items) and
+`scripts/security_check.py`, and fix what fails. When writing code for the
 user, deliver complete files — no "rest of the code here" placeholders — so they drop in and run.
 
 ## Writing in the UI

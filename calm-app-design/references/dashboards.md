@@ -34,6 +34,20 @@ both themes (raw `slate-400` on white is 2.6:1 — too faint for small text).
   focus. A vertical gradient under the line, starting at ≤ 5 % opacity and fading to 0.
 - **Bar:** 4 px rounded top corners, square bottoms. One colour per series; a comparison period
   is the **same colour at 30 % opacity**, drawn beside the current period, with a small legend.
+- **Slim bars, never boxy:** a column is at most ~40 % of its category slot and never wider than
+  20 px in a card (24 px alone on a full slide); grouped bars sit 2–3 px apart and the group stays
+  under ~60 % of the slot. Never a stock chart's default fat bars with thin gaps. Rankings and
+  long names use horizontal bars (names left, value at the bar's end), largest first if asked.
+- **Value labels:** on every bar or on none — if the longest value doesn't fit over its bar, leave
+  them off and let 3–5 round gridline values carry the scale. Stacked bars label the total.
+- **Legend:** a small dot + name per series, one centred line above the plot; none for one series.
+- **Advanced charts, when the data asks for them:** a spider/radar web for profiles across 3–12
+  dimensions (soft filled webs, dots at values, faint dashed rings); a speedometer for one score in
+  a range (half dial in muted bad · watch · good bands, thin needle, the figure under the hub); a
+  funnel for narrowing stages (centred bars in one fading hue, count and carry-on % per stage).
+  Suggest them only on a clear signal (stage names, a score out of 100); always offer them.
+- **Style in a few clicks:** charts offer a short style menu, not a form — colours (theme / accent
+  shades / highlight first / quiet greys), values, legend, gridlines, largest first, reset.
 - **Gridlines:** horizontal only, at ~6 % opacity (`--chart-grid`); no vertical lines, no chart
   border. 4–5 round tick values (0, 100, 200, 300).
 - **Colours:** `--chart-1…4` (muted, readable in both themes). One series → `chart-1`. Never

@@ -72,6 +72,19 @@ Fix every "no". Say in the summary what was checked and what wasn't.
 - [ ] Streams (AI, SSE) stop on Stop / unmount; live views reconnect and show their status.
 - [ ] The UI works with the backend down: a calm "can't reach the server" state, nothing blank.
 
+## Speed and resources (see performance.md)
+- [ ] No event handler or render does > 16 ms of work; edits re-render only what changed.
+- [ ] Every task over ~300 ms runs in the background with progress and Stop (Esc), and frees its
+      buffers in `finally`.
+- [ ] Caches are content-keyed, bounded, cleared on context change — and a test proves the fast
+      path equals the full rebuild.
+- [ ] Heavy pages / libraries / Python imports load on first use; start-up ≤ 1 s.
+- [ ] GPU paths used: transforms for drag / animation, canvas for raster, hardware video encode
+      with CPU fallback, local AI on GPU and unloaded after idle.
+- [ ] Oversize input refused before loading; canvases and blob URLs released.
+- [ ] Runtimes lean (smallest library that does the job, no pip / setuptools / caches shipped).
+- [ ] Before → after numbers recorded for every optimisation.
+
 ## Security (see security.md)
 - [ ] `python3 scripts/security_check.py <app>` — no HIGH findings; MEDIUMs reviewed.
 - [ ] No user / server / AI content rendered as HTML; URLs from data limited to https / same-site.
@@ -79,3 +92,6 @@ Fix every "no". Say in the summary what was checked and what wasn't.
 - [ ] Backend: exact CORS origins, Pydantic limits and allow-lists, bound SQL params, CSRF on
       cookie writes, ownership checks, generic 500s, rate limits on costly endpoints.
 - [ ] CSP set for the site (theme script hash or nonce; `frame-src` only for the video hosts used).
+- [ ] Desktop: minimal capabilities (no broad fs / shell), `script-src 'self'`, local services on
+      127.0.0.1 with a 0600 token compared in constant time, file commands with extension and
+      size allow-lists and paths kept inside their folders, atomic writes.

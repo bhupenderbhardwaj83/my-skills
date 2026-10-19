@@ -9,6 +9,7 @@ Run `python3 scripts/security_check.py <app>` before calling any app finished; f
 3. Backend rules (FastAPI)
 4. Content Security Policy
 5. Embeds, links and files
+6. Desktop apps (Tauri / Electron)
 
 ## 1. Already handled by the components
 
@@ -84,3 +85,24 @@ frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
 - Downloads: build files from data with `Blob` + `URL.createObjectURL`, revoke after use;
   sanitise filenames (`downloadFrom` does).
 - Third-party assets (icons, fonts, videos): licensed for the use, credited where required.
+
+## 6. Desktop apps (Tauri / Electron)
+
+- **Least privilege.** Tauri capabilities list only what the UI calls (no `fs:*`, no shell); Electron
+  uses `contextIsolation`, no `nodeIntegration`, a typed preload bridge.
+- **Strict CSP** in production: `script-src 'self'`, `object-src 'none'`, `connect-src` only the
+  app's own services; `freezePrototype` on.
+- **Local services** (a Python sidecar) bind to `127.0.0.1` only, require a random token stored with
+  0600 permissions and compared with `hmac.compare_digest`, cap upload sizes, allow-list CORS
+  origins, and never log request bodies.
+- **Files.** Every command that takes a path checks the extension allow-list and a size cap,
+  canonicalises and keeps it inside its folder (decks, assets), and refuses symlinks out. Prefer
+  paths the user picked or dropped in this session for reads outside the app's folders. Names
+  from users are made safe (no `/ \ : * ? " < > |`, no leading dots). Writes are atomic
+  (write temp → rename).
+- **Untrusted files** (workbooks, archives) are size-checked from their directory before
+  unpacking (zip bombs), parsed with safe libraries, and never executed.
+- **Updates and installs** are signed (and notarised on macOS when possible); installers use HTTPS
+  downloads from each project's own site and verify what they fetch.
+- **Privacy.** No microphone / screen / camera without the user asking; no telemetry unless opted in;
+  AI local by default — cloud providers only when the user connects them.
